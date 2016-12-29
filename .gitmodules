@@ -1,0 +1,3 @@
+[submodule "oscar-api"]
+	path = oscar-api
+	url = git@github.com:delta62/oscar-api.git
