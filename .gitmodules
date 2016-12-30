@@ -1,3 +1,6 @@
 [submodule "oscar-api"]
 	path = oscar-api
 	url = git@github.com:delta62/oscar-api.git
+[submodule "oscar-seed"]
+	path = oscar-seed
+	url = git@github.com:delta62/oscar-seed.git

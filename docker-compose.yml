@@ -12,6 +12,16 @@ services:
       NODE_CONFIG: '{"db":{"host":"db","port":27017,"db":"oscars"},"auth":{"secret":"secret","admins":["admin"]},"score":{"correct":10,"incorrect":0},"log":{"level":"INFO"}}'
     links:
       - db
+  seed:
+    image: node:6-alpine
+    command: npm start
+    volumes:
+      - ./oscar-seed:/app
+    working_dir: /app
+    environment:
+      NODE_CONFIG: '{"db":{"host":"db","port":27017,"db":"oscars"}}'
+    links:
+      - db
   db:
     image: mongo:3
     ports:
