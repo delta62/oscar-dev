@@ -13,3 +13,5 @@ git submodule init && git submodule update
 git submodule foreach yarn install
 docker-compose up -d
 ```
+
+Now you can access the UI at `http://localhost:3000`.

@@ -22,6 +22,16 @@ services:
       NODE_CONFIG: '{"db":{"host":"db","port":27017,"db":"oscars"}}'
     links:
       - db
+  ui:
+    image: node:6-alpine
+    command: npm start
+    volumes:
+      - ./oscar-ui:/app
+    ports:
+      - "3000:3000"
+    working_dir: /app
+    links:
+      - api
   db:
     image: mongo:3
     ports:
