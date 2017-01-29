@@ -2,14 +2,14 @@ version: "2"
 services:
   api:
     image: node:6-alpine
-    command: npm start
+    command: npm run debug
     volumes:
       - ./oscar-api:/app
     ports:
       - "3001:8080"
     working_dir: /app
     environment:
-      NODE_CONFIG: '{"db":{"host":"db","port":27017,"db":"oscars"},"auth":{"secret":"secret","admins":["admin"]},"score":{"correct":10,"incorrect":0},"log":{"level":"INFO"}}'
+      NODE_CONFIG: '{"db":{"host":"db","port":27017,"db":"oscars"},"auth":{"secret":"secret","admins":["admin@example.com"]},"score":{"correct":10,"incorrect":0},"log":{"level":"INFO"}}'
     links:
       - db
   seed:
@@ -22,16 +22,6 @@ services:
       NODE_CONFIG: '{"db":{"host":"db","port":27017,"db":"oscars"}}'
     links:
       - db
-  ui:
-    image: node:6-alpine
-    command: npm start
-    volumes:
-      - ./oscar-ui:/app
-    ports:
-      - "3000:3000"
-    working_dir: /app
-    links:
-      - api
   db:
     image: mongo:3
     ports:
