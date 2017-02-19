@@ -7,3 +7,6 @@
 [submodule "oscar-ui"]
 	path = oscar-ui
 	url = git@github.com:delta62/oscar-ui.git
+[submodule "oscar-static"]
+	path = oscar-static
+	url = git@github.com:delta62/oscar-static.git
