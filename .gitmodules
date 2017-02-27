@@ -10,3 +10,6 @@
 [submodule "oscar-static"]
 	path = oscar-static
 	url = git@github.com:delta62/oscar-static.git
+[submodule "oscar-resources"]
+	path = oscar-resources
+	url = git@github.com:codifiman/oscar-resources.git
